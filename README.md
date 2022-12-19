@@ -57,6 +57,9 @@ $ yarn run test:e2e
 # test coverage
 $ yarn run test:cov
 ```
+## URL's
+ 1. https://reimagined-octo-potato-smoky.vercel.app/helloworld 
+ 2. https://reimagined-octo-potato-smoky.vercel.app/
 
 ## Support
 
