@@ -2,7 +2,7 @@ import { Body, Controller, Post } from '@nestjs/common';
 import { EmailService } from '../../services/email.service';
 
 @Controller()
-export class HelloWorldController {
+export class EmailController {
   constructor(private readonly emailService: EmailService) {}
 
   @Post('/sendemail')
