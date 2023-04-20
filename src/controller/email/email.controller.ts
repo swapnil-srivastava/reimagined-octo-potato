@@ -11,11 +11,7 @@ export class EmailController {
     @Body('subject') subject: string,
     @Body('htmlBody') htmlBody: string,
   ) {
-    await this.emailService.sendEmail(
-      (to = 'contact@swapnilsrivastava.eu'),
-      (subject = 'Hello from Postmark'),
-      (htmlBody = '<strong>Hello</strong> dear Postmark user.'),
-    );
+    await this.emailService.sendEmail(to, subject, htmlBody);
     return { message: 'Email sent successfully' };
   }
 }
