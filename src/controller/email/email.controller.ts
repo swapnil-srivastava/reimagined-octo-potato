@@ -6,12 +6,11 @@ export class EmailController {
   constructor(private readonly emailService: EmailService) {}
 
   @Post('/sendemail')
-  async sendEmail(
+  sendEmail(
     @Body('to') to: string,
     @Body('subject') subject: string,
     @Body('htmlBody') htmlBody: string,
   ) {
-    await this.emailService.sendEmail(to, subject, htmlBody);
-    return { message: 'Email sent successfully' };
+    this.emailService.sendEmail(to, subject, htmlBody);
   }
 }
