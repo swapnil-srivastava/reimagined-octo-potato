@@ -1,6 +1,5 @@
 import { Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
-import { HttpService } from '@nestjs/axios';
 import * as postmark from 'postmark';
 
 @Injectable()
@@ -8,10 +7,7 @@ export class EmailService {
   private readonly emailKey: string;
   private client: postmark.Client;
 
-  constructor(
-    private readonly configService: ConfigService,
-    private readonly httpService: HttpService,
-  ) {
+  constructor(private readonly configService: ConfigService) {
     this.emailKey = this.configService.get<string>('config.emailKey');
 
     // Send an email:
