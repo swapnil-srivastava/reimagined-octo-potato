@@ -14,11 +14,6 @@ export class EmailController {
   ) {
     await this.emailService.sendEmail(to, subject, htmlBody);
 
-    res.headers.set(
-      'Access-Control-Allow-Origin',
-      'https://swapnil.srivastava.eu',
-    );
-
     return { message: 'Email sent successfully' };
   }
 }
