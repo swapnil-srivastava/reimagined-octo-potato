@@ -4,11 +4,11 @@ import * as cors from 'cors';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
-  app.use(cors({
-    origin: 'https://swapnilsrivastava.eu',
-    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  app.enableCors({
+    origin: ['https://swapnilsrivastava.eu'],
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
     credentials: true,
-  }));
+  });
   await app.listen(3000);
 }
 bootstrap();
