@@ -14,7 +14,7 @@ export class EmailController {
     @Body('htmlBody') htmlBody: string,
   ) {
     this.logger.log('Received POST request to send email');
-    console.log("sendnestemail", to, subject, htmlBody)
+    console.log("sendnestemail ====> ", "to->", to, "     subject->",subject, "    htmlBody->", htmlBody)
     this.emailService.sendNestEmailService(to, subject, htmlBody);
   }
 

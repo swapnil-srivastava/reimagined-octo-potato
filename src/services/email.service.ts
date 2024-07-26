@@ -22,6 +22,9 @@ export class EmailService {
 
    async sendNestEmailService(to: string, subject: string, htmlBody: string) {
     try {
+      
+      console.log("sendNestEmailService ====> ", "to->", to, "     subject->",subject, "    htmlBody->", htmlBody)
+      
       await this.client.sendEmail({
         From: 'hello@swapnilsrivastava.eu',
         To: to,
@@ -30,6 +33,7 @@ export class EmailService {
         TextBody: 'Hello from Postmark!',
         MessageStream: 'outbound',
       });
+      
       console.log('Email sent successfully');
     } catch (error) {
       console.error('Error sending email:', error);
