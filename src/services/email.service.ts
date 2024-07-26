@@ -13,21 +13,23 @@ export class EmailService {
     // Send an email:
     this.client = new postmark.Client(this.emailKey);
 
-    console.log("constructor email server nestjs")
+    console.log('Postmark client initialized');
   }
 
-  async sendEmail(
-    to: string,
-    subject: string,
-    htmlBody: string,
-  ): Promise<void> {
-    await this.client.sendEmail({
-      From: 'hello@swapnilsrivastava.eu',
-      To: to,
-      Subject: subject,
-      HtmlBody: htmlBody,
-      TextBody: 'Hello from Postmark!',
-      MessageStream: 'outbound',
-    });
+  async sendEmail(to: string, subject: string, htmlBody: string): Promise<void> {
+    try {
+      await this.client.sendEmail({
+        From: 'hello@swapnilsrivastava.eu',
+        To: to,
+        Subject: subject,
+        HtmlBody: htmlBody,
+        TextBody: 'Hello from Postmark!',
+        MessageStream: 'outbound',
+      });
+      console.log('Email sent successfully');
+    } catch (error) {
+      console.error('Error sending email:', error);
+      throw error;
+    }
   }
 }
