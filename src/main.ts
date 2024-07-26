@@ -8,7 +8,6 @@ async function bootstrap() {
     origin: ['https://swapnilsrivastava.eu'],
     methods: ['GET', 'HEAD', 'PUT', 'PATCH', 'POST', 'DELETE', 'OPTIONS'],
     credentials: true,
-    allowedHeaders: 'Content-Type, Authorization',
   });
   await app.listen(3000);
 }
