@@ -25,7 +25,7 @@ export class HelloWorldController {
     this.emailService.sendNestEmailService(to, subject, htmlBody);
   }
 
-  @Options('sendnestemail')
+  @Options('/sendnestemail')
   options() {
     this.logger.log('Received OPTIONS request');
     return;
