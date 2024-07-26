@@ -10,19 +10,8 @@ export class HelloWorldController {
 
   @Get('/helloworld')
   getHelloWorld(): string {
+    this.logger.log('Received GET request for HELLO world endpoint');
     return this.helloWorldService.getHelloWorld();
   }
 
-  @Post('/sendnestemail-hello')
-  sendNestEmail(
-    @Body('to') to: string,
-    @Body('subject') subject: string,
-    @Body('htmlBody') htmlBody: string,
-  ) {
-    this.logger.log('Received POST request to send email');
-    console.log("sendnestemail", to, subject, htmlBody)
-    this.emailService.sendNestEmailService(to, subject, htmlBody);
-  }
-
-  
 }
