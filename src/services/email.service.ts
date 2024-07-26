@@ -20,12 +20,12 @@ export class EmailService {
     console.log('Postmark client initialized');
   }
 
-   async sendNestEmailService(to: string, subject: string, htmlBody: string) {
+  sendNestEmailService(to: string, subject: string, htmlBody: string) {
     try {
       
       console.log("sendNestEmailService ====> ", "to->", to, "     subject->",subject, "    htmlBody->", htmlBody)
       
-      await this.client.sendEmail({
+      this.client.sendEmail({
         From: 'hello@swapnilsrivastava.eu',
         To: to,
         Subject: subject,
@@ -33,7 +33,7 @@ export class EmailService {
         TextBody: 'Hello from Postmark!',
         MessageStream: 'outbound',
       });
-      
+
       console.log('Email sent successfully');
     } catch (error) {
       console.error('Error sending email:', error);
