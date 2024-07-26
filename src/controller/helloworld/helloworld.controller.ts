@@ -9,7 +9,7 @@ export class HelloWorldController {
 
   @Get()
   getHelloWorld(): string {
-    this.logger.log('Received GET request for HELLO world endpoint');
+    this.logger.log('Received GET request for /helloworld endpoint');
     return this.helloWorldService.getHelloWorld();
   }
 
