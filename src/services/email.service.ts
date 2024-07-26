@@ -20,7 +20,7 @@ export class EmailService {
     console.log('Postmark client initialized');
   }
 
-  async sendEmail(to: string, subject: string, htmlBody: string): Promise<void> {
+  async sendNestEmailService(to: string, subject: string, htmlBody: string): Promise<void> {
     try {
       await this.client.sendEmail({
         From: 'hello@swapnilsrivastava.eu',
