@@ -11,6 +11,7 @@ export class EmailController {
     @Body('subject') subject: string,
     @Body('htmlBody') htmlBody: string,
   ) {
+    console.log("sendnestemail", to, subject, htmlBody)
     await this.emailService.sendEmail(to, subject, htmlBody);
   }
 }
