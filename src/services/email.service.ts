@@ -10,6 +10,10 @@ export class EmailService {
   constructor(private readonly configService: ConfigService) {
     this.emailKey = this.configService.get<string>('config.emailKey');
 
+    if (!this.emailKey) {
+      throw new Error('Postmark API key is not defined');
+    }
+
     // Send an email:
     this.client = new postmark.Client(this.emailKey);
 
