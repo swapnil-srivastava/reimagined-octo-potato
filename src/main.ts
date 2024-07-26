@@ -7,6 +7,7 @@ async function bootstrap() {
   app.enableCors({
     origin: ['https://swapnilsrivastava.eu'],
     methods: ['GET', 'HEAD', 'PUT', 'PATCH', 'POST', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
     credentials: true,
   });
   await app.listen(3000);
