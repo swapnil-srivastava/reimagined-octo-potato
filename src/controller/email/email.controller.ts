@@ -5,7 +5,7 @@ import { EmailService } from '../../services/email.service';
 export class EmailController {
   constructor(private readonly emailService: EmailService) {}
 
-  @Post('/sendemail')
+  @Post('/sendnestemail')
   async sendEmail(
     @Body('to') to: string,
     @Body('subject') subject: string,
