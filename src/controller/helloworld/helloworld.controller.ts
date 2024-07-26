@@ -7,7 +7,7 @@ export class HelloWorldController {
 
   constructor(private readonly helloWorldService: HelloWorldService) {}
 
-  @Get('/helloworld')
+  @Get()
   getHelloWorld(): string {
     this.logger.log('Received GET request for HELLO world endpoint');
     return this.helloWorldService.getHelloWorld();
