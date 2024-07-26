@@ -10,6 +10,7 @@ async function bootstrap() {
     allowedHeaders: ['Content-Type', 'Authorization'],
     credentials: true,
     preflightContinue: false,
+    optionsSuccessStatus: 204,
   });
   await app.listen(3000);
 }
