@@ -12,6 +12,8 @@ export class EmailService {
 
     // Send an email:
     this.client = new postmark.Client(this.emailKey);
+
+    console.log("constructor email server nestjs")
   }
 
   async sendEmail(
