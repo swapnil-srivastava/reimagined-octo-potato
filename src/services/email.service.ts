@@ -20,7 +20,7 @@ export class EmailService {
     htmlBody: string,
   ): Promise<void> {
     await this.client.sendEmail({
-      From: 'contact@swapnilsrivastava.eu',
+      From: 'hello@swapnilsrivastava.eu',
       To: to,
       Subject: subject,
       HtmlBody: htmlBody,
