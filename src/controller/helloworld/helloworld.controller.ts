@@ -21,7 +21,6 @@ export class HelloWorldController {
     @Body('htmlBody') htmlBody: string,
   ) {
     this.logger.log('Received POST request to send email');
-    console.log("sendnestemail", to, subject, htmlBody)
     this.emailService.sendNestEmailService(to, subject, htmlBody);
   }
 
